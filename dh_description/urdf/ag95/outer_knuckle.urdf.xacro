@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="outer_knuckle" params="prefix finger_prefix mirror:=1">
+
+    <xacro:property name="open" value="-0.72431" />
+    <xacro:property name="close" value="-1.93926" />
+
+    <joint name="${prefix}${finger_prefix}outer_knuckle_joint" type="revolute">
+      <origin xyz="0.035409 -0.01297 0" rpy="0 0 0" />
+      <parent link="${prefix}${finger_prefix}outer_finger" />
+      <child link="${prefix}${finger_prefix}outer_knuckle" />
+      <axis xyz="0 0 1" />
+      <limit lower="${close}" upper="${open}" velocity="1.0" effort="90.0" />
+      <mimic joint="${prefix}finger_joint" offset="${close}" multiplier="${(close - open) / 0.03}" />
+    </joint>
+
+    <link name="${prefix}${finger_prefix}outer_knuckle">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://dh_description/meshes/ag95/outer_knuckle.dae" />
+        </geometry>
+        <material name="">
+          <color rgba="0.82353 0.82353 0.82353 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://dh_description/meshes/ag95/outer_knuckle.dae" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.020694 -0.01587 -3.2261E-11" rpy="0 0 0" />
+        <mass value="0.0079313" />
+        <inertia
+          ixx="1.6657E-06" ixy="1.1368E-06" ixz="-2.0382E-15"
+          iyy="2.63E-06" iyz="3.0915E-15"
+          izz="2.5842E-06" />
+      </inertial>
+    </link>
+
+  </xacro:macro>
+
+</robot>

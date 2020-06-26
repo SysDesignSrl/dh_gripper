@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ag95">
+  <xacro:include filename="$(find dh_description)/urdf/ag95.urdf.xacro" />
+  <xacro:include filename="$(find dh_description)/urdf/ag95/finger.transmission.xacro" />
+
+  <xacro:ag95 prefix="ag95_" />
+  <xacro:finger_transmission prefix="ag95_" mechanical_reduction="${-100/0.03}" />
+
+</robot>

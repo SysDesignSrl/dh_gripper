@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="finger" params="prefix">
+
+    <xacro:property name="open" value="-0.03" />
+    <xacro:property name="close" value="0.00" />
+
+    <joint name="${prefix}finger_joint" type="prismatic">
+      <origin xyz="0. 0. 0.085" rpy="0 0 0" />
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}finger" />
+      <axis xyz="0 0 1" />
+      <limit lower="${open}" upper="${close}" velocity="0.03" effort="90.0" />
+    </joint>
+
+    <link name="${prefix}finger">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://dh_description/meshes/ag95/finger.dae" />
+        </geometry>
+        <material name="">
+          <color rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://dh_description/meshes/ag95/finger.dae" />
+        </geometry>
+      </collision>
+      <inertial>
+        <origin
+          xyz="3.9135E-14 1.9462E-12 3.5194E-14" rpy="0 0 0" />
+        <mass value="0.0066216" />
+        <inertia
+          ixx="1.4212E-06" ixy="-4.5344E-18" ixz="2.1335E-18"
+          iyy="1.8936E-07" iyz="-2.1705E-19"
+          izz="1.4719E-06" />
+      </inertial>
+    </link>
+
+  </xacro:macro>
+
+</robot>

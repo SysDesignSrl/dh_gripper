@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find dh_description)/urdf/ag95/base_link.urdf.xacro" />
+  <xacro:include filename="$(find dh_description)/urdf/ag95/finger.urdf.xacro" />
+  <xacro:include filename="$(find dh_description)/urdf/ag95/outer_finger.urdf.xacro" />
+  <xacro:include filename="$(find dh_description)/urdf/ag95/bottom_knuckle.urdf.xacro" />
+  <xacro:include filename="$(find dh_description)/urdf/ag95/inner_knuckle.urdf.xacro" />
+  <xacro:include filename="$(find dh_description)/urdf/ag95/outer_knuckle.urdf.xacro" />
+  <xacro:include filename="$(find dh_description)/urdf/ag95/inner_finger.urdf.xacro" />
+  <xacro:include filename="$(find dh_description)/urdf/ag95/inner_finger_pad.urdf.xacro" />
+
+  <xacro:macro name="ag95" params="prefix:=''">
+
+    <xacro:base_link prefix="${prefix}"/>
+    <xacro:finger prefix="${prefix}"/>
+
+    <xacro:outer_finger prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:bottom_knuckle prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:inner_knuckle prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:outer_knuckle prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:inner_finger prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:inner_finger_pad prefix="${prefix}" finger_prefix="left_"/>
+
+    <xacro:outer_finger prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:bottom_knuckle prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:inner_knuckle prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:outer_knuckle prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:inner_finger prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:inner_finger_pad prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,4 @@
+[submodule "dh_hardware"]
+	path = dh_hardware
+	url = https://github.com/nicola-sysdesign/dh_gripper_ros.git
+	branch = hardware_interface

@@ -1,0 +1,23 @@
+<package format="2">
+  <name>dh_description</name>
+  <version>0.0.0</version>
+  <description>
+    The dh_description package
+  </description>
+  <license>TODO</license>
+  
+  <url type="website">http://wiki.ros.org/dh_description</url>
+
+  <author email="nicola@sysdesign.it">Nicola Conti</author>
+  <maintainer email="nicola@sysdesign.it">Nicola Conti</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>rviz</exec_depend>
+
+</package>
