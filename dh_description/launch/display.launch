@@ -1,5 +1,6 @@
 <launch>
-  <arg name="gui" default="true"/>
+  <arg name="gui" default="true"
+    doc="If true starts GUI to publish joints state otherwise no."/>
 
   <!-- Load robot_description on Parameter Server -->
   <param name="robot_description" command="xacro --inorder $(find dh_description)/urdf/ag95_gripper.urdf.xacro"/>
