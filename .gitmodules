@@ -1,4 +1,4 @@
-[submodule "dh_hardware"]
-	path = dh_hardware
+[submodule "dh_gripper_ros"]
+	path = dh_gripper_ros
 	url = https://github.com/nicola-sysdesign/dh_gripper_ros.git
 	branch = gripper_command
