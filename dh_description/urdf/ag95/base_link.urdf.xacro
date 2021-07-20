@@ -19,15 +19,15 @@
           <mesh filename="package://dh_description/meshes/ag95/base_link.dae" />
         </geometry>
       </collision>
+      <inertial>
+        <origin xyz="-1.9172E-05 4.6267E-05 0.054522" rpy="0 0 0" />
+        <mass value="0.3499" />
+        <inertia
+          ixx="0.00050797" ixy="6.5338E-08" ixz="-7.1191E-08"
+          iyy="0.00038427" iyz="3.8152E-07"
+          izz="0.00016523" />
+      </inertial>
     </link>
-    <inertial>
-      <origin xyz="-1.9172E-05 4.6267E-05 0.054522" rpy="0 0 0" />
-      <mass value="0.3499" />
-      <inertia
-        ixx="0.00050797" ixy="6.5338E-08" ixz="-7.1191E-08"
-        iyy="0.00038427" iyz="3.8152E-07"
-        izz="0.00016523" />
-    </inertial>
 
   </xacro:macro>
 

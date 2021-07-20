@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>dh_gazebo</name>
+  <version>0.0.0</version>
+  <description>
+    The dh_gazebo package
+  </description>
+  <license>TODO</license>
+
+  <maintainer email="nicola@sysdesign.it">Nicola Conti</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>dh_description</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_ros_control</exec_depend>
+
+</package>

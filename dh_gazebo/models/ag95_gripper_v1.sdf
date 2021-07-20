@@ -1,0 +1,873 @@
+<sdf version='1.6'>
+  <model name='ag95'>
+    <link name='ag95_base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-1.9e-05 4.6e-05 0.054522 0 -0 0</pose>
+        <mass>0.3499</mass>
+        <inertia>
+          <ixx>0.00050797</ixx>
+          <ixy>6.5338e-08</ixy>
+          <ixz>-7.1191e-08</ixz>
+          <iyy>0.00038427</iyy>
+          <iyz>3.8152e-07</iyz>
+          <izz>0.00016523</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/base_link.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/base_link.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <link name='ag95_finger'>
+      <pose frame=''>0 0 0.085 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.0066216</mass>
+        <inertia>
+          <ixx>1.4212e-06</ixx>
+          <ixy>-4.5344e-18</ixy>
+          <ixz>2.1335e-18</ixz>
+          <iyy>1.8936e-07</iyy>
+          <iyz>-2.1705e-19</iyz>
+          <izz>1.4719e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_finger_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/finger.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_finger_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/finger.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_finger_joint' type='prismatic'>
+      <child>ag95_finger</child>
+      <parent>ag95_base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.03</lower>
+          <upper>0</upper>
+          <effort>90</effort>
+          <velocity>0.03</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_left_outer_finger'>
+      <pose frame=''>0 0.02141 0.085 -1.5708 0 1.5708</pose>
+      <inertial>
+        <pose frame=''>0.056202 0.03372 -0 0 -0 0</pose>
+        <mass>0.0067722</mass>
+        <inertia>
+          <ixx>1.3438e-06</ixx>
+          <ixy>-4.6858e-07</ixy>
+          <ixz>4.7977e-15</ixz>
+          <iyy>6.4835e-07</iyy>
+          <iyz>1.7311e-15</iyz>
+          <izz>1.4005e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_left_outer_finger_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/outer_finger.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_left_outer_finger_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/outer_finger.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_left_outer_finger_joint' type='revolute'>
+      <child>ag95_left_outer_finger</child>
+      <parent>ag95_finger</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.5236</lower>
+          <upper>-0.22689</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_left_outer_knuckle'>
+      <pose frame=''>0 0.056819 0.09797 -1.5708 0 1.5708</pose>
+      <inertial>
+        <pose frame=''>0.020694 -0.01587 -0 0 -0 0</pose>
+        <mass>0.0079313</mass>
+        <inertia>
+          <ixx>1.6657e-06</ixx>
+          <ixy>1.1368e-06</ixy>
+          <ixz>-2.0382e-15</ixz>
+          <iyy>2.63e-06</iyy>
+          <iyz>3.0915e-15</iyz>
+          <izz>2.5842e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_left_outer_knuckle_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/outer_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_left_outer_knuckle_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/outer_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_left_outer_knuckle_joint' type='revolute'>
+      <child>ag95_left_outer_knuckle</child>
+      <parent>ag95_left_outer_finger</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1.93926</lower>
+          <upper>-0.72431</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_right_outer_finger'>
+      <pose frame=''>0 -0.02141 0.085 -1.5708 -0 -1.5708</pose>
+      <inertial>
+        <pose frame=''>0.056202 0.03372 -0 0 -0 0</pose>
+        <mass>0.0067722</mass>
+        <inertia>
+          <ixx>1.3438e-06</ixx>
+          <ixy>-4.6858e-07</ixy>
+          <ixz>4.7977e-15</ixz>
+          <iyy>6.4835e-07</iyy>
+          <iyz>1.7311e-15</iyz>
+          <izz>1.4005e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_right_outer_finger_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/outer_finger.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_right_outer_finger_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/outer_finger.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_right_outer_finger_joint' type='revolute'>
+      <child>ag95_right_outer_finger</child>
+      <parent>ag95_finger</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.5236</lower>
+          <upper>-0.22689</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_right_outer_knuckle'>
+      <pose frame=''>0 -0.056819 0.09797 -1.5708 -0 -1.5708</pose>
+      <inertial>
+        <pose frame=''>0.020694 -0.01587 -0 0 -0 0</pose>
+        <mass>0.0079313</mass>
+        <inertia>
+          <ixx>1.6657e-06</ixx>
+          <ixy>1.1368e-06</ixy>
+          <ixz>-2.0382e-15</ixz>
+          <iyy>2.63e-06</iyy>
+          <iyz>3.0915e-15</iyz>
+          <izz>2.5842e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_right_outer_knuckle_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/outer_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_right_outer_knuckle_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/outer_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_right_outer_knuckle_joint' type='revolute'>
+      <child>ag95_right_outer_knuckle</child>
+      <parent>ag95_right_outer_finger</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.93926</lower>
+          <upper>-0.72431</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_left_bottom_knuckle'>
+      <pose frame=''>0 0.016 0.10586 -1.5708 0 1.5708</pose>
+      <inertial>
+        <pose frame=''>0.019421 0.001276 0 0 -0 0</pose>
+        <mass>0.0039541</mass>
+        <inertia>
+          <ixx>1.1534e-06</ixx>
+          <ixy>-2.1521e-09</ixy>
+          <ixz>-1.124e-13</ixz>
+          <iyy>1.7667e-06</iyy>
+          <iyz>-9.3728e-15</iyz>
+          <izz>6.8389e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_left_bottom_knuckle_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/bottom_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_left_bottom_knuckle_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/bottom_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_left_bottom_knuckle_joint' type='revolute'>
+      <child>ag95_left_bottom_knuckle</child>
+      <parent>ag95_base_link</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0.008727</lower>
+          <upper>0.637045</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_left_inner_knuckle'>
+      <pose frame=''>0 0.016 0.10586 1.5708 0 -1.5708</pose>
+      <inertial>
+        <pose frame=''>-0.001421 0.023192 -0 0 -0 0</pose>
+        <mass>0.011317</mass>
+        <inertia>
+          <ixx>6.694e-06</ixx>
+          <ixy>1.0721e-07</ixy>
+          <ixz>2.7063e-15</ixz>
+          <iyy>3.1292e-06</iyy>
+          <iyz>-4.9646e-14</iyz>
+          <izz>3.7346e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_left_inner_knuckle_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_left_inner_knuckle_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_left_inner_knuckle_joint' type='revolute'>
+      <child>ag95_left_inner_knuckle</child>
+      <parent>ag95_base_link</parent>
+      <axis>
+        <xyz>-1 -0 0</xyz>
+        <limit>
+          <lower>1.42244</lower>
+          <upper>2.33525</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_left_inner_finger'>
+      <pose frame=''>0 -0.039 0.10536 1.5708 0 -1.5708</pose>
+      <inertial>
+        <pose frame=''>0.009154 -0.002766 -0.015298 0 -0 0</pose>
+        <mass>0.0195812</mass>
+        <inertia>
+          <ixx>9.18062e-06</ixx>
+          <ixy>1.89072e-07</ixy>
+          <ixz>3.73303e-07</ixz>
+          <iyy>9.7498e-06</iyy>
+          <iyz>-1.2314e-07</iyz>
+          <izz>1.15154e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_left_inner_finger_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_finger.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='ag95_left_inner_finger_pad_collision_1'>
+        <pose frame=''>0.0104 -0.0005 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_finger_pad.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_left_inner_finger_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_finger.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='ag95_left_inner_finger_pad_visual_1'>
+        <pose frame=''>0.0104 -0.0005 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_finger_pad.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_left_inner_finger_joint' type='revolute'>
+      <child>ag95_left_inner_finger</child>
+      <parent>ag95_left_inner_knuckle</parent>
+      <axis>
+        <xyz>-1 -0 0</xyz>
+        <limit>
+          <lower>-0.764454</lower>
+          <upper>0.148356</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_right_bottom_knuckle'>
+      <pose frame=''>0 -0.016 0.10586 -1.5708 -0 -1.5708</pose>
+      <inertial>
+        <pose frame=''>0.019421 0.001276 0 0 -0 0</pose>
+        <mass>0.0039541</mass>
+        <inertia>
+          <ixx>1.1534e-06</ixx>
+          <ixy>-2.1521e-09</ixy>
+          <ixz>-1.124e-13</ixz>
+          <iyy>1.7667e-06</iyy>
+          <iyz>-9.3728e-15</iyz>
+          <izz>6.8389e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_right_bottom_knuckle_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/bottom_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_right_bottom_knuckle_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/bottom_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_right_bottom_knuckle_joint' type='revolute'>
+      <child>ag95_right_bottom_knuckle</child>
+      <parent>ag95_base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0.008727</lower>
+          <upper>0.637045</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_right_inner_knuckle'>
+      <pose frame=''>0 -0.016 0.10586 1.5708 -0 1.5708</pose>
+      <inertial>
+        <pose frame=''>-0.001421 0.023192 -0 0 -0 0</pose>
+        <mass>0.011317</mass>
+        <inertia>
+          <ixx>6.694e-06</ixx>
+          <ixy>1.0721e-07</ixy>
+          <ixz>2.7063e-15</ixz>
+          <iyy>3.1292e-06</iyy>
+          <iyz>-4.9646e-14</iyz>
+          <izz>3.7346e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_right_inner_knuckle_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_right_inner_knuckle_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_knuckle.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_right_inner_knuckle_joint' type='revolute'>
+      <child>ag95_right_inner_knuckle</child>
+      <parent>ag95_base_link</parent>
+      <axis>
+        <xyz>1 -0 0</xyz>
+        <limit>
+          <lower>1.42244</lower>
+          <upper>2.33525</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ag95_right_inner_finger'>
+      <pose frame=''>0 0.039 0.10536 1.5708 -0 1.5708</pose>
+      <inertial>
+        <pose frame=''>0.009154 -0.002766 -0.015298 0 -0 0</pose>
+        <mass>0.0195812</mass>
+        <inertia>
+          <ixx>9.18062e-06</ixx>
+          <ixy>1.89072e-07</ixy>
+          <ixz>3.73303e-07</ixz>
+          <iyy>9.7498e-06</iyy>
+          <iyz>-1.2314e-07</iyz>
+          <izz>1.15154e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='ag95_right_inner_finger_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_finger.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='ag95_right_inner_finger_pad_collision_1'>
+        <pose frame=''>0.0104 -0.0005 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_finger_pad.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ag95_right_inner_finger_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_finger.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='ag95_right_inner_finger_pad_visual_1'>
+        <pose frame=''>0.0104 -0.0005 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://dh_description/meshes/ag95/inner_finger_pad.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='ag95_right_inner_finger_joint' type='revolute'>
+      <child>ag95_right_inner_finger</child>
+      <parent>ag95_right_inner_knuckle</parent>
+      <axis>
+        <xyz>1 -0 0</xyz>
+        <limit>
+          <lower>-0.764454</lower>
+          <upper>0.148356</upper>
+          <effort>90</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <static>0</static>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/dh_ag95</robotNamespace>
+      <legacyModeNS>false</legacyModeNS>
+    </plugin>
+  </model>
+</sdf>

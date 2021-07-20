@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ag95_gazebo" params="prefix:='' ns:=''">
+    <xacro:include filename="$(find dh_description)/urdf/ag95/base_link.gazebo.xacro"/>
+    <xacro:include filename="$(find dh_description)/urdf/ag95/finger.gazebo.xacro"/>
+    <xacro:include filename="$(find dh_description)/urdf/ag95/outer_finger.gazebo.xacro"/>
+    <xacro:include filename="$(find dh_description)/urdf/ag95/bottom_knuckle.gazebo.xacro"/>
+    <xacro:include filename="$(find dh_description)/urdf/ag95/inner_knuckle.gazebo.xacro"/>
+    <xacro:include filename="$(find dh_description)/urdf/ag95/outer_knuckle.gazebo.xacro"/>
+    <xacro:include filename="$(find dh_description)/urdf/ag95/inner_finger.gazebo.xacro"/>
+    <xacro:include filename="$(find dh_description)/urdf/ag95/inner_finger_pad.gazebo.xacro"/>
+
+
+    <xacro:base_link prefix="${prefix}"/>
+    <xacro:finger prefix="${prefix}"/>
+
+    <xacro:outer_finger prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:bottom_knuckle prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:inner_knuckle prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:outer_knuckle prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:inner_finger prefix="${prefix}" finger_prefix="left_"/>
+    <xacro:inner_finger_pad prefix="${prefix}" finger_prefix="left_"/>
+
+    <xacro:outer_finger prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:bottom_knuckle prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:inner_knuckle prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:outer_knuckle prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:inner_finger prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+    <xacro:inner_finger_pad prefix="${prefix}" finger_prefix="right_" mirror="-1"/>
+
+    <!-- ros_control plugin -->
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>${ns}</robotNamespace>
+        <legacyModeNS>false</legacyModeNS>
+      </plugin>
+    </gazebo>
+
+  </xacro:macro>
+
+</robot>

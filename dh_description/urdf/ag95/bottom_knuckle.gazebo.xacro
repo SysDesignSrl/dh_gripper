@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="bottom_knuckle" params="prefix finger_prefix mirror:=1">
+
+    <gazebo reference="${prefix}${finger_prefix}bottom_knuckle">
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+  </xacro:macro>
+
+</robot>

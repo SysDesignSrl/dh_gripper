@@ -1,0 +1,15 @@
+dh_ag95:
+
+  #
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  #
+  finger_joint_controller:
+    type: position_controllers/GripperActionController
+    joint: ag95_finger_joint
+
+  # finger_joint_controller:
+  #   type: position_controllers/JointPositionController
+  #   joint: ag95_finger_joint
