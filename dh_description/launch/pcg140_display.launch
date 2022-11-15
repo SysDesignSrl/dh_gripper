@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="gui" default="true"
+       doc="If true starts GUI to publish joints state, otherwise no."/>
+
+  <!-- Load robot_description on Parameter Server -->
+  <param name="robot_description" 
+         command="$(find xacro)/xacro $(find dh_description)/xacro/pcg140.gripper.xacro"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" if="$(arg gui)"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher"     type="joint_state_publisher" unless="$(arg gui)" >
+    <rosparam param="source_list">[dh_driver/joint_states]</rosparam>
+  </node>
+
+  <!-- RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true" 
+        args="--display-config $(find dh_description)/rviz/robot_model.rviz"/>
+
+</launch>

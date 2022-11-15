@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="pcg140">
+  <xacro:include filename="$(find dh_description)/xacro/pcg140.urdf.xacro" />
+
+  <xacro:pcg140 prefix="pcg140_"/>
+
+</robot>
